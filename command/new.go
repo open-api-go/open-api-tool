@@ -28,7 +28,7 @@ func init() {
 }
 
 func run(_ *cobra.Command, _ []string) {
-	err := os.MkdirAll(path.Join(dir, "google", "api"), 0766)
+	err := os.MkdirAll(path.Join(dir, "google", "api"), 0777)
 	if err != nil {
 		log.Fatalln("mkdir err:", err)
 		return
