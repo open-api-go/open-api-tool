@@ -2,11 +2,18 @@ package tmpl
 
 import (
 	"bytes"
+	_ "embed"
 	"text/template"
 )
 
+//go:embed third_party/google/api/annotations.proto
+var protoannotations string
+
+//go:embed third_party/google/api/http.proto
+var protohttp string
+
 func GenAnnotations(_ string) (string, error) {
-	t, err := template.ParseFiles("third_party/google/api/annotations.proto")
+	t, err := template.New("annotations").Parse(protoannotations)
 	if err != nil {
 		return "", err
 	}
@@ -19,7 +26,7 @@ func GenAnnotations(_ string) (string, error) {
 }
 
 func GenHTTP(_ string) (string, error) {
-	t, err := template.ParseFiles("third_party/google/api/http.proto")
+	t, err := template.New("http").Parse(protohttp)
 	if err != nil {
 		return "", err
 	}

@@ -28,9 +28,9 @@ func init() {
 }
 
 func run(_ *cobra.Command, _ []string) {
-	err := os.MkdirAll(path.Join(dir, "google/api"), os.ModeDir)
+	err := os.MkdirAll(path.Join(dir, "google", "api"), 0766)
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalln("mkdir err:", err)
 		return
 	}
 
@@ -46,7 +46,7 @@ func run(_ *cobra.Command, _ []string) {
 func generate(fn func(name string) (string, error), fileName ...string) {
 	fd, err := os.Create(path.Join(fileName...))
 	if err != nil {
-		log.Fatalln(err)
+		log.Fatalln("create err:", err)
 		return
 	}
 	c, err := fn(name)
