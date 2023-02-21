@@ -1,4 +1,4 @@
-module github.com/open-api-go/opa
+module github.com/open-api-go/openapi-tool
 
 go 1.16
 
