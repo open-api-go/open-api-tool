@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/open-api-go/openapi-tool/command"
+	"github.com/open-api-go/open-api-tool/command"
 	"github.com/spf13/cobra"
 )
 

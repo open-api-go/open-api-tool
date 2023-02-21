@@ -6,7 +6,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/open-api-go/openapi-tool/tmpl"
+	"github.com/open-api-go/open-api-tool/tmpl"
 	"github.com/spf13/cobra"
 )
 

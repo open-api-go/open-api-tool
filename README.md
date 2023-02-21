@@ -1,2 +1,2 @@
-# opa
-open-api toolkit
+# open-api-tool
+open-api-toolk
