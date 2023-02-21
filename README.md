@@ -1,2 +1,2 @@
 # open-api-tool
-open-api-toolk
+open-api-tool
