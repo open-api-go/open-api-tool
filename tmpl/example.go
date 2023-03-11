@@ -6,7 +6,7 @@ import (
 )
 
 var exampleTemplate = `syntax = "proto3";
-package {{ .Name }}.api;
+package {{ .Name }}.api; // 填openapi的域名,不需要带https, 只支持https
 import "google/api/annotations.proto";
 
 option go_package = "github.com/open-api-go/{{ .Name }}";
@@ -14,7 +14,7 @@ option go_package = "github.com/open-api-go/{{ .Name }}";
 service Greeter {
     rpc Hello(HelloReq) returns (HelloRes) {
 		option (google.api.http) = {
-			post:"/hello/{userid}", 
+			post:"/hello/{userid}?name={name}", 
 			body: "body"
 		};
 	};

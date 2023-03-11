@@ -6,8 +6,7 @@ import (
 )
 
 var makefileTemplate = `build:
-	protoc --go_out $(GOPATH)/src  {{ .Name }}.proto
-	protoc --open_api_out $(GOPATH)/src {{ .Name }}.proto
+	protoc --go_out=:$(GOPATH)/src --go_api_out=:.  {{ .Name }}.proto
 `
 
 func GenMakefile(name string) (string, error) {
